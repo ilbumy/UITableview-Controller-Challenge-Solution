@@ -46,14 +46,35 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    // Change sections
+//    if (section == 0) {
+//        return 3;
+//    }
+//    else {
+//        return 2;
+//    }
+    
+    if (section == 0) {
+        return 2;
+    }
+    if (section == 1) {
+        return 1;
+    }
+    if (section == 2) {
+        return 3;
+    }
+    
+    else {
+        return 0;
+    }
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,6 +83,22 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
+    if (indexPath.section == 0) {
+        cell.textLabel.text = [NSString stringWithFormat:@"I am in section 0"];
+        cell.textLabel.textColor = [UIColor redColor];
+    }
+    if (indexPath.section == 1) {
+        cell.textLabel.text = [NSString stringWithFormat:@"another section"];
+        cell.textLabel.textColor = [UIColor blueColor];
+    }
+    if (indexPath.section == 2) {
+        cell.textLabel.text = [NSString stringWithFormat:@"Row: %i", indexPath.row];
+        cell.textLabel.textColor = [UIColor yellowColor];
+        cell.contentView.backgroundColor = [UIColor blackColor];
+        cell.textLabel.backgroundColor = [UIColor blackColor];
+    }
+    
+    //cell.textLabel.text = [NSString stringWithFormat:@"Row %i", indexPath.row];
     
     return cell;
 }
