@@ -1,5 +1,5 @@
 //
-//  IPKViewController.h
+//  IPKViewController2.h
 //  UITableViewController Challenge Solution
 //
 //  Created by InTouch Administrator on 10/22/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IPKViewController : UIViewController
+@interface IPKViewController2 : UITableViewController
 
 @end
